@@ -1,0 +1,7 @@
+test*
+/temp/*
+*.db
+.idea/
+__pycache__/
+in_list/
+out_list/
