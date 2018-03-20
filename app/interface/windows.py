@@ -134,7 +134,7 @@ class AppWindow(Window):
         self.btn_new = QAction(QIcon(os.path.join(self._root, 'icon', 'new.png')), 'Создать список', self)
         self.btn_type = QAction(QIcon(os.path.join(self._root, 'icon', 'type.png')), 'Изменить вид отправления', self)
         self.check_complete = QAction('Автодополнение получателя', self)
-        self.btn_search = None
+        self.btn_search = QAction(QIcon(os.path.join(self._root, 'icon', 'find.png')), 'Искать', self)
         # Тулбары
         self.toolbar = QToolBar('Общий')
         self.toolbar_search = QToolBar('Поиск', self)
@@ -192,19 +192,18 @@ class AppWindow(Window):
         self.btn_find.setShortcut('Ctrl+Shift+D')
         self.btn_find.setStatusTip('Загрузка данных из базы по фильтрам')
 
-        self.btn_search = QAction(QIcon(os.path.join(self._root, 'icon', 'find.png')), 'Искать', self)
         self.btn_search.setStatusTip('Поиск списков по ШПИ')
 
         self.btn_refresh.setShortcut('Ctrl+Shift+C')
         self.btn_refresh.setStatusTip('Сброс фильтров по умолчанию')
 
-        self.btn_check.setShortcut('Ctrl+Shift+C')
+        #self.btn_check.setShortcut('Ctrl+Shift+C')
         self.btn_check.setStatusTip('Поставить отметку на все списики')
 
-        self.btn_uncheck.setShortcut('Ctrl+Shift+C')
+        #self.btn_uncheck.setShortcut('Ctrl+Shift+C')
         self.btn_uncheck.setStatusTip('Снять отметку со всех списков')
 
-        self.btn_del.setShortcut('Ctrl+Shift+C')
+        #self.btn_del.setShortcut('Ctrl+Shift+C')
         self.btn_del.setStatusTip('Удаление отмеченных списков')
 
         self.btn_new.setShortcut('Ctrl+Shift+N')

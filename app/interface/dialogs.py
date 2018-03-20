@@ -884,7 +884,6 @@ class NumListEditDialog(QDialog):
     def init_connect(self):
         self.btn_ok.clicked.connect(self.submit_close)
         self.btn_cancel.clicked.connect(self.close)
-        self.number.valueChanged.connect(self.value_change)
 
     def submit_close(self):
         self.value = int(self.number.value())
