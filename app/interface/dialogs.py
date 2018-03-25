@@ -1574,7 +1574,7 @@ class EditListDialog(QDialog):
                     self.save_completion(index, reception)
                     self.recount_list()
                     if self.current_table_row is not None:
-                        self.table.add_row(self.current_table_row, rpo, False)
+                        self.table.add_row(self.current_table_row, rpo, self.colorize, False)
                     self.clear_fields()
                     self.edit_mode = False
                     self.add_success_message('Сохранено :)')
@@ -1606,7 +1606,7 @@ class EditListDialog(QDialog):
                 self.rpo_list.add_rpo(rpo)
                 self.save_completion(index, reception)
                 self.recount_list()
-                self.table.add_row(0, rpo)
+                self.table.add_row(0, rpo, colorize=self.colorize)
                 self.clear_fields()
                 self.edit_mode = False
                 self.add_success_message('Сохранено :)')
@@ -1621,8 +1621,10 @@ class EditListDialog(QDialog):
         self.index_widget.field.clear()
         self.region_widget.field.clear()
         self.city_widget.field.clear()
+        self.address_widget.field.clear()
+
         if self.reception_widget.field.isEnabled(): self.reception_widget.field.clear()
-        if self.address_widget.field.isEnabled(): self.address_widget.field.clear()
+
         if self.mass_widget.field.isEnabled():
             self.mass_widget.field.clear()
             self.pay_widget.field.clear()
@@ -1758,7 +1760,6 @@ class EditListDialog(QDialog):
         return True
 
     def barcode_widget_complete(self):
-        #self.barcode_widget.field.focusNextChild()
         self.index_widget.field.setFocus()
         self.barcode_widget_out_focus()
 
