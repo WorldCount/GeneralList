@@ -13,7 +13,10 @@ basedir = get_file_dir(__file__)
 
 # ПРИЛОЖЕНИЕ
 myappid = u'worldcount.mmp4.genlist.1'
-ctypes.windll.shell32.SetCurrentProcessExplicitAppUserModelID(myappid)
+try:
+    ctypes.windll.shell32.SetCurrentProcessExplicitAppUserModelID(myappid)
+except:
+    pass
 
 
 # Класс настроек
